@@ -105,7 +105,7 @@
     }
     
     .submenu li a::before {
-      content: '\\25B6'; /* ▶ */
+      content: '▶'; /* direct character */
       display: inline-block;
       transform: rotate(0deg);
       transition: transform 0.3s ease;
@@ -117,6 +117,7 @@
     .submenu li:hover a::before {
       transform: rotate(90deg); /* ▼ rotated down */
     }
+
 
     .submenu-toggle:hover .submenu {
       display: block;
