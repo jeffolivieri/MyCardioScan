@@ -51,13 +51,38 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .team-section {
-      background-color: #ffffff;
       margin-top: 2rem;
-      border-left: 5px solid #28a745;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .team-section h3 {
-      color: #003366;
+    .collapsible {
+      background-color: #003366;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      width: 100%;
+      text-align: left;
+      font-size: 1.1rem;
+      border: none;
+      outline: none;
+      transition: background-color 0.3s ease;
+    }
+    .collapsible:hover {
+      background-color: #002244;
+    }
+    .content {
+      display: none;
+      padding: 1rem;
+      background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-left: 5px solid #28a745;
+    }
+    .profile-photo {
+      float: left;
+      margin-right: 1rem;
+      width: 150px;
+      border-radius: 8px;
+    }
+    .content ul {
+      padding-left: 1.5rem;
     }
     footer {
       background-color: #003366;
@@ -70,6 +95,11 @@
       .features {
         grid-template-columns: 1fr;
       }
+      .profile-photo {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem auto;
+      }
     }
   </style>
 </head>
@@ -78,7 +108,7 @@
   <header>
     <img src="/images/logo.png" alt="MyCardioScan Logo" />
     <h1>MyCardioScan</h1>
-    <p>Advancing Heart Disease Detection Through Modern Technology</p>
+    <p>Advancing Heart Disease Detection Through Advanced Technology</p>
   </header>
 
   <section class="intro">
@@ -91,16 +121,20 @@
 
   <section class="team-section">
     <h2>Meet the Team</h2>
-    <h3>Dr. Luiz Antonio Rivetti</h3>
-    <p><strong>Dr. Luiz Antonio Rivetti</strong> is a renowned Brazilian cardiologist and cardiovascular surgeon based in São Paulo. He is highly regarded for his contributions to off-pump coronary artery bypass surgery and his long-standing academic role at the <em>Faculdade de Ciências Médicas da Santa Casa de São Paulo (FCMSCSP)</em>.</p>
-    <ul>
-      <li><strong>Education:</strong> Graduated in 1970 from FCMSCSP, followed by a residency in Cardiovascular Surgery at Santa Casa de Misericórdia de São Paulo (1971–1975).</li>
-      <li><strong>Academic & Clinical Roles:</strong> Adjunct Professor at FCMSCSP and Adjunct Chief of Clinical Department at Santa Casa de São Paulo since 1996. Earned a doctorate in Surgery in 1990.</li>
-      <li><strong>Innovation:</strong> Inventor of a flexible polymeric intraluminal shunt that enables coronary artery bypass without cardiopulmonary bypass. This technique improves patient outcomes by reducing risk and recovery time.</li>
-      <li><strong>Publications & Patents:</strong> Authored over 60 scientific papers and holds multiple international patents, including in the U.S.</li>
-      <li><strong>Recognition:</strong> Regular guest on national media like <em>Conversa com Bial</em>, where he discusses cardiac anatomy, emotions, and his career inspiration.</li>
-    </ul>
-    <p>Dr. Rivetti is a cornerstone of cardiovascular innovation in Latin America and continues to mentor future generations of heart surgeons.</p>
+
+    <button class="collapsible">Dr. Luiz Antonio Rivetti</button>
+    <div class="content">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Luiz_Antonio_Rivetti.jpg/220px-Luiz_Antonio_Rivetti.jpg" alt="Dr. Luiz Antonio Rivetti" class="profile-photo" />
+      <p><strong>Dr. Luiz Antonio Rivetti</strong> is a renowned Brazilian cardiologist and cardiovascular surgeon based in São Paulo. He is highly regarded for his contributions to off-pump coronary artery bypass surgery and his long-standing academic role at the <em>Faculdade de Ciências Médicas da Santa Casa de São Paulo (FCMSCSP)</em>.</p>
+      <ul>
+        <li><strong>Education:</strong> Graduated in 1970 from FCMSCSP, followed by a residency in Cardiovascular Surgery at Santa Casa de Misericórdia de São Paulo (1971–1975).</li>
+        <li><strong>Academic & Clinical Roles:</strong> Adjunct Professor at FCMSCSP and Adjunct Chief of Clinical Department at Santa Casa de São Paulo since 1996. Earned a doctorate in Surgery in 1990.</li>
+        <li><strong>Innovation:</strong> Inventor of a flexible polymeric intraluminal shunt that enables coronary artery bypass without cardiopulmonary bypass. This technique improves patient outcomes by reducing risk and recovery time.</li>
+        <li><strong>Publications & Patents:</strong> Authored over 60 scientific papers and holds multiple international patents, including in the U.S.</li>
+        <li><strong>Recognition:</strong> Regular guest on national media like <em>Conversa com Bial</em>, where he discusses cardiac anatomy, emotions, and his career inspiration.</li>
+      </ul>
+      <p>Dr. Rivetti is a cornerstone of cardiovascular innovation in Latin America and continues to mentor future generations of heart surgeons.</p>
+    </div>
   </section>
 
   <section class="features">
@@ -125,6 +159,21 @@
   <footer>
     <p>&copy; 2025 MyCardioScan. All rights reserved.</p>
   </footer>
+
+  <script>
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
