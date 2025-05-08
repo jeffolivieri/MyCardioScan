@@ -77,12 +77,47 @@
     .submenu li:hover {
       background-color: #f1f1f1;
     }
+     .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px; /* increased width */
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 0;
+      z-index: 1000;
+      opacity: 0;
+      animation: fadeIn 0.4s forwards;
+    }
+    
+    .submenu li {
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .submenu li a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+    
     .submenu li a::before {
-      content: '\25B6'; /* right-pointing triangle */
+      content: '\\25B6'; /* ▶ */
+      display: inline-block;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease;
       color: var(--accent-color);
       margin-right: 8px;
       font-size: 0.8rem;
     }
+    
+    .submenu li:hover a::before {
+      transform: rotate(90deg); /* ▼ rotated down */
+    }
+
     .submenu-toggle:hover .submenu {
       display: block;
     }
