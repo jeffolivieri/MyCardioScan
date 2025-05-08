@@ -7,10 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #A51C30; /* Harvard Crimson */
-      --secondary-color: #000000; /* Black */
-      --text-color: #1d1d1f; /* HMS-style dark text */
-      --light-gray: #ffffff; /* Page background white */
+      --primary-color: #A51C30;
+      --secondary-color: #000000;
+      --text-color: #1d1d1f;
+      --light-gray: #ffffff;
     }
 
     body {
@@ -49,16 +49,46 @@
       display: flex;
       gap: 2rem;
     }
+    nav ul li {
+      position: relative;
+    }
     nav ul li a {
       text-decoration: none;
       color: var(--secondary-color);
       font-weight: bold;
+      cursor: pointer;
+    }
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 0;
+      z-index: 1000;
+    }
+    .submenu li {
+      padding: 0.5rem 1rem;
+    }
+    .submenu li:hover {
+      background-color: #f1f1f1;
+    }
+    .submenu li a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+    .submenu-toggle:hover .submenu {
+      display: block;
     }
     section {
       padding: 2rem;
       max-width: 960px;
       margin: auto;
       background-color: var(--light-gray);
+    }
+    .hidden {
+      display: none;
     }
     .intro h2 {
       font-size: 1.8rem;
@@ -120,6 +150,9 @@
       margin-top: 4rem;
     }
     @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
       .features {
         grid-template-columns: 1fr;
       }
@@ -142,11 +175,17 @@
       <li><a href="#individuals">For Individuals</a></li>
       <li><a href="#organizations">For Organizations</a></li>
       <li><a href="#insights">Insights</a></li>
-      <li><a href="#about">About Us</a></li>
+      <li class="submenu-toggle">
+        <a>About Us</a>
+        <ul class="submenu">
+          <li><a href="#about-section" onclick="toggleSection('about-section')">About Us</a></li>
+          <li><a href="#team-section" onclick="toggleSection('team-section')">Meet the Team</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
-  <section class="intro" id="about">
+  <section class="intro hidden" id="about-section">
     <h2>About Us</h2>
     <p>
       MyCardioScan is a medical research initiative dedicated to transforming cardiovascular diagnostics.
@@ -156,7 +195,7 @@
 
   <div class="separator"></div>
 
-  <section class="team-section">
+  <section class="team-section hidden" id="team-section">
     <h2>Meet the Team</h2>
     <button class="collapsible">Dr. Luiz Antonio Rivetti</button>
     <div class="content">
@@ -173,25 +212,6 @@
     </div>
   </section>
 
-  <section class="features">
-    <div class="feature-box">
-      <h3>AI-Powered Analysis</h3>
-      <p>Our proprietary deep learning models analyze cardiac MRI scans to detect subtle signs of disease that may be missed by traditional methods.</p>
-    </div>
-    <div class="feature-box">
-      <h3>Research-Driven Innovation</h3>
-      <p>We collaborate with global research institutions to improve diagnostic accuracy and support early intervention strategies.</p>
-    </div>
-    <div class="feature-box">
-      <h3>Clinical Impact</h3>
-      <p>Our mission is to support physicians with intelligent tools that reduce risk and improve patient outcomes through personalized diagnostics.</p>
-    </div>
-    <div class="feature-box">
-      <h3>Secure & Compliant</h3>
-      <p>Data privacy and regulatory compliance are at the core of everything we do — from anonymization to ethical AI deployment.</p>
-    </div>
-  </section>
-
   <footer>
     <p>&copy; 2025 MyCardioScan. All rights reserved.</p>
   </footer>
@@ -205,6 +225,16 @@
         content.style.display = content.style.display === "block" ? "none" : "block";
       });
     });
+
+    function toggleSection(sectionId) {
+      document.querySelectorAll('section').forEach(sec => {
+        if (sec.id === sectionId) {
+          sec.classList.remove('hidden');
+        } else {
+          sec.classList.add('hidden');
+        }
+      });
+    }
   </script>
 
 </body>
