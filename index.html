@@ -13,7 +13,6 @@
       --light-gray: #ffffff;
       --accent-color: #800080; /* Purple for arrows */
     }
-
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -103,7 +102,7 @@
       text-decoration: none;
       color: var(--text-color);
     }
-    
+   
     .submenu li a::before {
       content: '▶'; /* direct character */
       display: inline-block;
@@ -117,8 +116,6 @@
     .submenu li:hover a::before {
       transform: rotate(90deg); /* ▼ rotated down */
     }
-
-
     .submenu-toggle:hover .submenu {
       display: block;
     }
@@ -148,6 +145,10 @@
       font-size: 1.8rem;
       color: var(--primary-color);
       text-align: center;
+    }
+    .logo-img {
+      width: 130%;
+      max-width: none; /* prevent inherited constraints */
     }
     .features {
       display: grid;
@@ -218,7 +219,7 @@
 </head>
 <body>
   <header>
-    <img src="/images/logo.png" alt="MyCardioScan Logo" />
+    <img src="/images/logo.png" alt="MyCardioScan Logo" class="logo-img" />
     <h1>MyCardioScan</h1>
   </header>
 
