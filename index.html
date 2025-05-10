@@ -237,8 +237,13 @@
           <li><a onclick="toggleSection('Cardio-Scan')">T-One Cardio Scan</a></li>
           </ul>
       </li>
-     <!-- <a href="#organizations">For Organizations</a></li>-->
-     <!-- <a href="#insights">Insights</a></li> -->
+       <li class="submenu-toggle">
+        <a>Training Module</a>
+        <ul class="submenu">
+          <li><a onclick="toggleSection('train-scan')">Train wiht Dashboard</a></li>
+          </ul>
+      </li>
+
       <li class="submenu-toggle">
         <a>About Us</a>
         <ul class="submenu">
@@ -252,6 +257,15 @@
   <div class="separator"></div>
   <section class="section-box hidden" id="Cardio-Scan">
   <h2>Heart Disease Detection Scanner App</h2>
+  <iframe 
+    src="https://your-streamlit-app-url.streamlit.app" 
+    width="100%" 
+    height="800px" 
+    frameborder="0">
+  </iframe>
+  </section>
+   <section class="section-box hidden" id="train-scan">
+  <h2>Training Module to Improve the Accuracy fo the Algorithm</h2>
   <iframe 
     src="https://your-streamlit-app-url.streamlit.app" 
     width="100%" 
