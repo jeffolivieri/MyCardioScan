@@ -1,0 +1,20 @@
+ # Python dependencies
+pydicom #conda install conda-forge::pydicom -y
+nibabel #conda install conda-forge::nibabel -y
+torch # conda install pytorch::pytorch
+torchvision #conda install pytorch::torchvision -y
+monai #conda install conda-forge::monai
+opencv-python #pip install -i https://pypi.anaconda.org/t/$TOKEN/nike/simple opencv-python
+scikit-learn #conda install conda-forge::scikit-learn
+matplotlib # conda install conda-forge::matplotlib
+numpy #conda install anaconda::numpy
+streamlit #conda install conda-forge::streamlit
+tqdm #conda install conda-forge::tqdm
+pandas #conda install conda-forge::pandas
+seaborn #conda install conda-forge::seaborn
+opencv #  conda install conda-forge::opencv / conda install fastai::opencv-python-headless 
+python-dotenv #conda install conda-forge::python-dotenv
+numpy #conda install conda-forge::numpy
+vtk # conda install conda-forge::vtk3y
+grad-cam #pip install grad-cam
+
