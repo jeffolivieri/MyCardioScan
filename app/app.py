@@ -17,7 +17,7 @@ from pytorch_grad_cam.utils.image import show_cam_on_image
 # Elegant Medical Styling
 # ------------------------
 
-st.set_page_config(page_title="BodyVerse - Aortic Dissection Detection", page_icon="🩺", layout="wide")
+st.set_page_config(page_title="My Cardio Scan", page_icon="🩺", layout="wide")
 
 st.markdown("""
     <style>
@@ -86,8 +86,8 @@ def preprocess_volume(volume, target_shape=(64, 128, 128)):
 # Streamlit App
 # ------------------------
 
-st.title("BodyVerse - Aortic Dissection Detection")
-st.caption("Developed for medical research and educational purposes by Prof. Dr. Luiz Antonio Rivetti")
+st.title("Rivetti Cardio Scanner")
+st.caption("Em processo de treinamento pelo Prof. Dr. Luiz Antonio Rivetti")
 
 # Sidebar Navigation
 page = st.sidebar.selectbox("Navigation", [
