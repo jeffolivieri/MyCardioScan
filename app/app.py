@@ -205,7 +205,7 @@ elif page == "Explainable AI 🔍":
 
             st.image(cam_overlay, caption=f"GradCAM Overlay on Slice {mid_slice_idx}", use_container_width=True)
 elif page == "📚 Instructions":
-    st.header("📚 Instructions - How to Use BodyVerse")
+    st.header("📚 Instructions - How to Use MyCardioScan")
 
     st.markdown("""
     ### 1️⃣ Preprocessing CT Scans
