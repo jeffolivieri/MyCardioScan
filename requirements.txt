@@ -1,9 +1,9 @@
  # Python dependencies
 pip>=24.0.0
 streamlit>=1.33.0
-torch>=2.1.0
+torch>=2.7.0
 numpy>=1.21.0
 nibabel>=5.2.0
 opencv-python>=4.8.0
-pytorch-grad-cam>=1.4.0
+grad-cam>=1.4.6
 
