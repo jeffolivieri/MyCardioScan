@@ -1,5 +1,5 @@
  # Python dependencies
-pip>=23.0.0
+pip>=24.0.0
 streamlit>=1.33.0
 torch>=2.1.0
 numpy>=1.21.0
